@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Simulado — Exata ENEM</title><link rel="stylesheet" href="style.css"></head>
+<body><header><div class="nav"><a class="logo" href="index.html">Exata ENEM</a>
+    <nav>
+      <a href="index.html">Início</a>
+      <a href="lembretes.html">Lembretes</a>
+      <a href="questoes.html">Questões</a>
+      <a href="formulas.html">Fórmulas</a>
+      <a href="conteudos.html">Conteúdos</a>
+      <a href="estrategia.html">Estratégia</a>
+      <a href="ferramentas.html">Ferramentas</a>
+    </nav></div></header>
+<main>
+<section class="hero">
+<h1>Simulado De Matemática</h1>
+<p>Responda e veja a resolução. As questões abaixo são autorais e servem para treinamento.</p>
+</section>
+<div id="quiz" class="card"></div>
+<script>
+const qs=[
+{nivel:"Fácil",tema:"Porcentagem",q:"Uma mochila custa R$ 200,00 e recebeu desconto de 15%. Qual é o novo preço?",a:["R$ 160,00","R$ 170,00","R$ 175,00","R$ 180,00","R$ 185,00"],c:1,r:"15% de 200 = 30. Então, 200 − 30 = R$ 170,00."},
+{nivel:"Médio",tema:"Função",q:"Uma corrida de táxi cobra R$ 8,00 de bandeirada e R$ 3,00 por quilômetro. Quanto será pago por uma corrida de 12 km?",a:["R$ 36,00","R$ 40,00","R$ 44,00","R$ 48,00","R$ 52,00"],c:2,r:"A função é P(x)=8+3x. Para 12 km: 8+36=R$ 44,00."},
+{nivel:"Difícil",tema:"Geometria",q:"Um terreno retangular tem área de 180 m² e comprimento 5 m maior que a largura. Qual é a largura?",a:["10 m","12 m","14 m","15 m","18 m"],c:1,r:"Se a largura é x, o comprimento é x+5. Então x(x+5)=180, resultando em x=12."}
+];
+let i=0,score=0,answered=false;
+function render(){
+ const x=qs[i];
+ document.getElementById("quiz").innerHTML=`<p class="muted">Questão ${i+1} de ${qs.length} · ${x.nivel} · ${x.tema}</p><h2>${x.q}</h2><div id="alts"></div><div id="feedback"></div>`;
+ x.a.forEach((v,k)=>{let b=document.createElement("button");b.className="button";b.style.margin="7px";b.textContent=String.fromCharCode(65+k)+") "+v;b.onclick=()=>answer(k);document.getElementById("alts").appendChild(b)});
+}
+function answer(k){
+ if(answered)return; answered=true; const x=qs[i];
+ const f=document.getElementById("feedback");
+ if(k===x.c){score++;f.innerHTML="<p><strong>Acerto.</strong> "+x.r+"</p>"}else f.innerHTML="<p><strong>Resposta correta: "+String.fromCharCode(65+x.c)+"</strong>. "+x.r+"</p>";
+ f.innerHTML+=`<button class="btn" onclick="next()">${i<qs.length-1?"Próxima Questão":"Finalizar"}</button>`;
+}
+function next(){if(i<qs.length-1){i++;answered=false;render()}else document.getElementById("quiz").innerHTML=`<h2>Resultado</h2><p>Você acertou ${score} de ${qs.length}.</p><a class="btn" href="questoes.html">Voltar Para Questões</a>`}
+render();
+</script>
+</main><footer>Exata ENEM — Matemática E Ciências Exatas Para O ENEM.</footer></body></html>

@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ferramentas — Exata ENEM</title><link rel="stylesheet" href="style.css"></head>
+<body><header><div class="nav"><a class="logo" href="index.html">Exata ENEM</a>
+    <nav>
+      <a href="index.html">Início</a>
+      <a href="lembretes.html">Lembretes</a>
+      <a href="questoes.html">Questões</a>
+      <a href="formulas.html">Fórmulas</a>
+      <a href="conteudos.html">Conteúdos</a>
+      <a href="estrategia.html">Estratégia</a>
+      <a href="ferramentas.html">Ferramentas</a>
+    </nav></div></header>
+<main>
+<section class="hero"><h1>Ferramentas</h1><p>Calculadoras simples para conferir resultados durante o estudo.</p></section>
+<div class="grid">
+<div class="card"><h2>Calculadora De Porcentagem</h2><input id="n" type="number" placeholder="Valor"><input id="p" type="number" placeholder="Porcentagem" style="margin-top:10px"><button class="btn" style="margin-top:12px" onclick="calc()">Calcular</button><p id="res"></p></div>
+<div class="card"><h2>Conversor De Comprimento</h2><input id="km" type="number" placeholder="Quilômetros"><button class="btn" style="margin-top:12px" onclick="conv()">Converter</button><p id="cres"></p></div>
+</div>
+<script>
+function calc(){let n=+document.getElementById("n").value,p=+document.getElementById("p").value;document.getElementById("res").textContent="Resultado: "+(n*p/100);}
+function conv(){let k=+document.getElementById("km").value;document.getElementById("cres").textContent=k+" km = "+(k*1000)+" m = "+(k*100000)+" cm";}
+</script>
+</main><footer>Exata ENEM — Matemática E Ciências Exatas Para O ENEM.</footer></body></html>
