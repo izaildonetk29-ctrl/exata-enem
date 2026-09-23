@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 420">
+<rect width="800" height="420" rx="36" fill="#eef3ff"/>
+<rect x="100" y="100" width="600" height="220" rx="28" fill="#fff" stroke="#dfe5ee" stroke-width="5"/>
+<circle cx="185" cy="210" r="42" fill="#2457d6"/>
+<text x="185" y="224" text-anchor="middle" font-family="Arial" font-size="40" font-weight="700" fill="#fff">1</text>
+<path d="M245 165h390M245 210h330M245 255h270" stroke="#aeb9ca" stroke-width="14" stroke-linecap="round"/>
+<path d="M245 300h180" stroke="#2457d6" stroke-width="14" stroke-linecap="round"/>
+<text x="400" y="70" text-anchor="middle" font-family="Arial" font-size="30" font-weight="700" fill="#182230">ESTRATÉGIA DE PROVA</text>
+</svg>

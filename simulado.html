@@ -1,41 +1,19 @@
-<!doctype html>
-<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Simulado — Exata ENEM</title><link rel="stylesheet" href="style.css"></head>
-<body><header><div class="nav"><a class="logo" href="index.html">Exata ENEM</a>
-    <nav>
-      <a href="index.html">Início</a>
-      <a href="lembretes.html">Lembretes</a>
-      <a href="questoes.html">Questões</a>
-      <a href="formulas.html">Fórmulas</a>
-      <a href="conteudos.html">Conteúdos</a>
-      <a href="estrategia.html">Estratégia</a>
-      <a href="ferramentas.html">Ferramentas</a>
-    </nav></div></header>
-<main>
-<section class="hero">
-<h1>Simulado De Matemática</h1>
-<p>Responda e veja a resolução. As questões abaixo são autorais e servem para treinamento.</p>
-</section>
-<div id="quiz" class="card"></div>
-<script>
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Simulado — Exata ENEM</title><link rel="stylesheet" href="style.css"></head><body><header><div class="nav"><a class="logo" href="index.html">Exata ENEM</a><nav><a href="index.html">Início</a><a href="lembretes.html">Lembretes</a><a href="questoes.html">Questões</a><a href="formulas.html">Fórmulas</a><a href="conteudos.html">Conteúdos</a><a href="estrategia.html">Estratégia</a><a href="ferramentas.html">Ferramentas</a></nav></div></header><main><section class="hero"><h1>Simulado De Matemática</h1><p>10 questões autorais. O foco é interpretação e aplicação, não apenas memorização de fórmula.</p><img class="hero-img" src="matematica.svg" alt="Ilustração matemática"></section><div id="quiz" class="card"></div><script>
 const qs=[
-{nivel:"Fácil",tema:"Porcentagem",q:"Uma mochila custa R$ 200,00 e recebeu desconto de 15%. Qual é o novo preço?",a:["R$ 160,00","R$ 170,00","R$ 175,00","R$ 180,00","R$ 185,00"],c:1,r:"15% de 200 = 30. Então, 200 − 30 = R$ 170,00."},
-{nivel:"Médio",tema:"Função",q:"Uma corrida de táxi cobra R$ 8,00 de bandeirada e R$ 3,00 por quilômetro. Quanto será pago por uma corrida de 12 km?",a:["R$ 36,00","R$ 40,00","R$ 44,00","R$ 48,00","R$ 52,00"],c:2,r:"A função é P(x)=8+3x. Para 12 km: 8+36=R$ 44,00."},
-{nivel:"Difícil",tema:"Geometria",q:"Um terreno retangular tem área de 180 m² e comprimento 5 m maior que a largura. Qual é a largura?",a:["10 m","12 m","14 m","15 m","18 m"],c:1,r:"Se a largura é x, o comprimento é x+5. Então x(x+5)=180, resultando em x=12."}
+{nivel:"Médio",tema:"Porcentagem",q:"Uma loja aplica dois descontos sucessivos de 20% e 15% sobre um produto de R$ 500,00. Qual é o preço final?",a:["R$ 325,00","R$ 340,00","R$ 350,00","R$ 360,00","R$ 365,00"],c:1,r:"Após 20%, o preço é 400. Depois, 15% de desconto sobre 400 é 60. Portanto, o preço final é R$ 340,00."},
+{nivel:"Médio",tema:"Função",q:"Uma empresa cobra uma taxa fixa de R$ 18,00 mais R$ 2,40 por unidade transportada. Se o cliente pagou R$ 162,00, quantas unidades foram transportadas?",a:["50","55","60","65","70"],c:2,r:"18 + 2,4x = 162. Logo, 2,4x = 144 e x = 60."},
+{nivel:"Médio",tema:"Geometria",q:"Um reservatório cilíndrico possui raio de 2 m e altura de 3 m. Considerando π=3, o volume, em m³, é:",a:["18","24","30","36","42"],c:3,r:"V=πr²h=3·4·3=36 m³."},
+{nivel:"Difícil",tema:"Estatística",q:"As notas de cinco alunos são 6, 7, 7, 8 e 12. Se a nota 12 for retirada, a média do conjunto restante será:",a:["6,5","7","7,0","7,5","8"],c:3,r:"Sem 12, ficam 6, 7, 7 e 8. A soma é 28; 28/4=7. A alternativa correta é a que representa 7."},
+{nivel:"Difícil",tema:"Probabilidade",q:"Uma urna possui 5 bolas vermelhas, 3 azuis e 2 verdes. Retiram-se duas bolas sem reposição. A probabilidade de ambas serem vermelhas é:",a:["1/4","2/9","1/5","5/18","1/3"],c:1,r:"A primeira é vermelha com 5/10. Depois restam 4 vermelhas em 9 bolas: 5/10·4/9=2/9."},
+{nivel:"Difícil",tema:"PA",q:"Uma sequência aritmética tem primeiro termo 7 e razão 4. A soma dos 20 primeiros termos é:",a:["820","860","880","900","940"],c:3,r:"a20=7+19·4=83. S20=20(7+83)/2=900."},
+{nivel:"Difícil",tema:"Geometria Analítica",q:"Os pontos A(2,3) e B(8,11) determinam um segmento. A distância entre A e B é:",a:["8","9","10","11","12"],c:2,r:"d=√[(8−2)²+(11−3)²]=√(36+64)=10."},
+{nivel:"Difícil",tema:"Combinatória",q:"Uma senha possui 4 algarismos distintos escolhidos entre 0 e 9. O primeiro não pode ser 0. Quantas senhas podem ser formadas?",a:["3024","4320","4536","5040","6480"],c:2,r:"Primeiro algarismo: 9 opções. Segundo: 9, terceiro: 8, quarto: 7. Total=9·9·8·7=4536."},
+{nivel:"Difícil",tema:"Função Quadrática",q:"A altura de um objeto é dada por h(t)=−5t²+20t+1. Qual é a altura máxima atingida?",a:["18","20","21","24","25"],c:2,r:"O máximo ocorre no vértice: t=−20/(2·−5)=2. Então h(2)=−20+40+1=21."},
+{nivel:"Difícil",tema:"Razão E Proporção",q:"Uma receita para 8 pessoas usa 600 g de determinado ingrediente. Para manter a mesma proporção, quantos gramas serão necessários para 14 pessoas?",a:["900","950","1000","1050","1100"],c:3,r:"600/8=75 g por pessoa. Para 14: 75·14=1050 g."}
 ];
 let i=0,score=0,answered=false;
-function render(){
- const x=qs[i];
- document.getElementById("quiz").innerHTML=`<p class="muted">Questão ${i+1} de ${qs.length} · ${x.nivel} · ${x.tema}</p><h2>${x.q}</h2><div id="alts"></div><div id="feedback"></div>`;
- x.a.forEach((v,k)=>{let b=document.createElement("button");b.className="button";b.style.margin="7px";b.textContent=String.fromCharCode(65+k)+") "+v;b.onclick=()=>answer(k);document.getElementById("alts").appendChild(b)});
-}
-function answer(k){
- if(answered)return; answered=true; const x=qs[i];
- const f=document.getElementById("feedback");
- if(k===x.c){score++;f.innerHTML="<p><strong>Acerto.</strong> "+x.r+"</p>"}else f.innerHTML="<p><strong>Resposta correta: "+String.fromCharCode(65+x.c)+"</strong>. "+x.r+"</p>";
- f.innerHTML+=`<button class="btn" onclick="next()">${i<qs.length-1?"Próxima Questão":"Finalizar"}</button>`;
-}
-function next(){if(i<qs.length-1){i++;answered=false;render()}else document.getElementById("quiz").innerHTML=`<h2>Resultado</h2><p>Você acertou ${score} de ${qs.length}.</p><a class="btn" href="questoes.html">Voltar Para Questões</a>`}
+function render(){const x=qs[i];document.getElementById("quiz").innerHTML='<p class="muted">Questão '+(i+1)+' de '+qs.length+' · '+x.nivel+' · '+x.tema+'</p><h2>'+x.q+'</h2><div id="alts"></div><div id="feedback"></div>';x.a.forEach((v,k)=>{let b=document.createElement("button");b.className="button quiz-option";b.textContent=String.fromCharCode(65+k)+") "+v;b.onclick=()=>answer(k);document.getElementById("alts").appendChild(b)})}
+function answer(k){if(answered)return;answered=true;const x=qs[i],f=document.getElementById("feedback");if(k===x.c){score++;f.innerHTML="<strong>Acerto.</strong> "+x.r}else f.innerHTML="<strong>Resposta correta: "+String.fromCharCode(65+x.c)+"</strong>. "+x.r;f.innerHTML+='<div class="actions"><button class="btn" onclick="next()">'+(i<qs.length-1?"Próxima Questão":"Finalizar")+"</button></div>"}
+function next(){if(i<qs.length-1){i++;answered=false;render()}else document.getElementById("quiz").innerHTML="<h2>Resultado</h2><p>Você acertou "+score+" de "+qs.length+".</p><a class='btn' href='questoes.html'>Voltar Para Questões</a>"}
 render();
-</script>
-</main><footer>Exata ENEM — Matemática E Ciências Exatas Para O ENEM.</footer></body></html>
+</script></main><footer>Exata ENEM — Matemática E Ciências Exatas Para O ENEM.</footer></body></html>

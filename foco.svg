@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 420">
+<rect width="800" height="420" rx="36" fill="#eef3ff"/>
+<circle cx="170" cy="210" r="92" fill="#2457d6" opacity=".12"/>
+<circle cx="170" cy="210" r="62" fill="none" stroke="#2457d6" stroke-width="12"/>
+<circle cx="170" cy="210" r="24" fill="#2457d6"/>
+<path d="M230 150l65-55M230 270l65 55" stroke="#2457d6" stroke-width="12" stroke-linecap="round"/>
+<rect x="390" y="92" width="300" height="236" rx="22" fill="#fff" stroke="#dfe5ee" stroke-width="5"/>
+<path d="M430 145h190M430 195h145M430 245h175" stroke="#aeb9ca" stroke-width="14" stroke-linecap="round"/>
+<path d="M430 295h105" stroke="#2457d6" stroke-width="14" stroke-linecap="round"/>
+<text x="540" y="65" text-anchor="middle" font-family="Arial" font-size="28" font-weight="700" fill="#182230">FOCO</text>
+</svg>

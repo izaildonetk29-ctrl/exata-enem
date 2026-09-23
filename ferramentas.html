@@ -1,24 +1,4 @@
-<!doctype html>
-<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Ferramentas — Exata ENEM</title><link rel="stylesheet" href="style.css"></head>
-<body><header><div class="nav"><a class="logo" href="index.html">Exata ENEM</a>
-    <nav>
-      <a href="index.html">Início</a>
-      <a href="lembretes.html">Lembretes</a>
-      <a href="questoes.html">Questões</a>
-      <a href="formulas.html">Fórmulas</a>
-      <a href="conteudos.html">Conteúdos</a>
-      <a href="estrategia.html">Estratégia</a>
-      <a href="ferramentas.html">Ferramentas</a>
-    </nav></div></header>
-<main>
-<section class="hero"><h1>Ferramentas</h1><p>Calculadoras simples para conferir resultados durante o estudo.</p></section>
-<div class="grid">
-<div class="card"><h2>Calculadora De Porcentagem</h2><input id="n" type="number" placeholder="Valor"><input id="p" type="number" placeholder="Porcentagem" style="margin-top:10px"><button class="btn" style="margin-top:12px" onclick="calc()">Calcular</button><p id="res"></p></div>
-<div class="card"><h2>Conversor De Comprimento</h2><input id="km" type="number" placeholder="Quilômetros"><button class="btn" style="margin-top:12px" onclick="conv()">Converter</button><p id="cres"></p></div>
-</div>
-<script>
-function calc(){let n=+document.getElementById("n").value,p=+document.getElementById("p").value;document.getElementById("res").textContent="Resultado: "+(n*p/100);}
-function conv(){let k=+document.getElementById("km").value;document.getElementById("cres").textContent=k+" km = "+(k*1000)+" m = "+(k*100000)+" cm";}
-</script>
-</main><footer>Exata ENEM — Matemática E Ciências Exatas Para O ENEM.</footer></body></html>
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Ferramentas — Exata ENEM</title><link rel="stylesheet" href="style.css"></head><body><header><div class="nav"><a class="logo" href="index.html">Exata ENEM</a><nav><a href="index.html">Início</a><a href="lembretes.html">Lembretes</a><a href="questoes.html">Questões</a><a href="formulas.html">Fórmulas</a><a href="conteudos.html">Conteúdos</a><a href="estrategia.html">Estratégia</a><a href="ferramentas.html">Ferramentas</a></nav></div></header><main><section class="hero"><h1>Ferramentas</h1><p>Calculadoras simples para conferir resultados durante o estudo.</p></section><div class="grid"><div class="card"><h2>Calculadora De Porcentagem</h2><input id="n" type="number" step="any" placeholder="Valor"><input id="p" type="number" step="any" placeholder="Porcentagem" style="margin-top:10px"><button class="btn" style="margin-top:12px" onclick="calc()">Calcular</button><p id="res"></p></div><div class="card"><h2>Conversor De Distâncias</h2><input id="valor" type="number" step="any" placeholder="Valor"><select id="de" style="margin-top:10px"><option value="km">Quilômetro (km)</option><option value="m">Metro (m)</option><option value="cm">Centímetro (cm)</option><option value="mm">Milímetro (mm)</option></select><select id="para" style="margin-top:10px"><option value="km">Quilômetro (km)</option><option value="m">Metro (m)</option><option value="cm">Centímetro (cm)</option><option value="mm">Milímetro (mm)</option></select><button class="btn" style="margin-top:12px" onclick="conv()">Converter</button><p id="cres"></p></div></div><script>
+function calc(){const n=Number(document.getElementById("n").value),p=Number(document.getElementById("p").value);document.getElementById("res").textContent=Number.isFinite(n)&&Number.isFinite(p)?"Resultado: "+(n*p/100):"Digite valores válidos."}
+function conv(){const v=Number(document.getElementById("valor").value),de=document.getElementById("de").value,para=document.getElementById("para").value,f={km:1000,m:1,cm:.01,mm:.001};if(!Number.isFinite(v)){document.getElementById("cres").textContent="Digite um valor válido.";return}const metros=v*f[de],resultado=metros/f[para];document.getElementById("cres").textContent=v+" "+de+" = "+resultado+" "+para}
+</script></main><footer>Exata ENEM — Matemática E Ciências Exatas Para O ENEM.</footer></body></html>
